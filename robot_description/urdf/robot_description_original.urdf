@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="robot_description">
+<!--virtual-->
+  <link 
+   name="base_footprint">
+   <visual>
+   <origin xyz="0 0 0" rpy="0 0 0" />
+   <geometry>
+   <box size="0.001 0.001 0.001" />
+   </geometry>
+   </visual>
+  </link>
+  <joint 
+    name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />        
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+  </joint>   
+<!--base_link--> 
+  <link 
+  name="base_link">
+    <inertial>
+      <origin
+        xyz="0.054874 2.2627E-05 0.069365"
+        rpy="0 0 0" />
+      <mass
+        value="3.3667" />
+      <inertia
+        ixx="0.016968"
+        ixy="8.9403E-06"
+        ixz="4.0741E-05"
+        iyy="0.017979"
+        iyz="-1.8558E-07"
+        izz="0.033089" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+<!--left_wheel--> 
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="-1.3878E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.017989" />
+      <inertia
+        ixx="5.84E-06"
+        ixy="-2E-21"
+        ixz="3.9457E-22"
+        iyy="1.1497E-05"
+        iyz="1.0673E-22"
+        izz="5.84E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.0899999999999911 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+<!--right_wheel--> 
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -1.3878E-17 -2.0817E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.017989" />
+      <inertia
+        ixx="5.84E-06"
+        ixy="-3.6689E-22"
+        ixz="-7.7775E-22"
+        iyy="1.1497E-05"
+        iyz="-7.34E-22"
+        izz="5.84E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0899999999999911 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+<!--lidar--> 
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="-0.0006076 2.2559E-06 -0.00036095"
+        rpy="0 0 0" />
+      <mass
+        value="0.16073" />
+      <inertia
+        ixx="7.3492E-05"
+        ixy="-6.952E-09"
+        ixz="1.1826E-06"
+        iyy="7.1544E-05"
+        iyz="-4.4534E-09"
+        izz="0.00010307" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.0550000000000001 0 0.0915975845410628"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+<!--camera--> 
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="-0.0015835 3.3983E-18 -5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.003196" />
+      <inertia
+        ixx="4.1224E-07"
+        ixy="-5.4401E-23"
+        ixz="8.0283E-23"
+        iyy="2.2058E-07"
+        iyz="2.9484E-23"
+        izz="2.2058E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.168 0 0.1625"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

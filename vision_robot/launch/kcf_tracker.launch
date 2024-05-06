@@ -1,0 +1,5 @@
+<launch>
+  <node name="kcf_tracker" type="kcf_kalman_tracker.py" pkg="vision_robot" >
+     <param name="if_move" value="true" />
+  </node>
+</launch>

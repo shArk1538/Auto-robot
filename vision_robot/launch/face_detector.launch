@@ -1,0 +1,4 @@
+<launch>
+  <node name="face_detector" type="face_detector.py" pkg="vision_robot" >
+  </node>
+</launch>

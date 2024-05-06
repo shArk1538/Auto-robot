@@ -1,0 +1,18 @@
+<launch>
+
+    <!-- 设置地图的配置文件，地图名需要更改-->
+    <arg name="map" default="room.yaml" /> 
+
+    <!-- 运行地图服务器，并且加载设置的地图-->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find robot_navi)/maps/$(arg map)"/>
+
+    <!-- 运行move_base节点 -->
+    <include file="$(find robot_navi)/launch/move_base.launch"/>
+
+    <!-- 启动AMCL节点 -->
+    <include file="$(find robot_navi)/launch/amcl.launch" />
+
+    <!-- 运行rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find robot_navi)/rviz/navi.rviz"/>
+
+</launch>

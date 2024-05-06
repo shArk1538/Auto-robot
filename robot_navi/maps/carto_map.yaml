@@ -1,0 +1,6 @@
+image: /home/tianbot/catkin_ws/src/graduate_design/robot_navi/maps/carto_map.pgm
+resolution: 0.050000
+origin: [-0.772471, -4.924951, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

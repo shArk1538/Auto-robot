@@ -1,0 +1,6 @@
+<launch>
+  
+  <node name="face_rec" type="face_rec.py" pkg="vision_robot" output="screen">
+     
+  </node>
+</launch>
